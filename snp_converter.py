@@ -66,8 +66,3 @@ def main():
 if __name__ == "__main__":
     main()
     
-    
-    
-print("Checking file paths:")
-print(f"Input file: {os.path.abspath('/app/data/FP_SNPs_10k_GB38_twoAllelsFormat.tsv')}")
-print(f"Reference dir: {os.path.abspath('/app/ref/GRCh38.d1.vd1_mainChr/sepChrs')}")
