@@ -83,7 +83,7 @@ docker run --rm \
   -l /app/data/snp_converter.log
 ```
 ## Описание работы скрипта применительно к FP_SNPs.txt
-Скрипт считывает входной файл 'FP_SNPs_10k_GB38_twoAllelsFormat.tsv', обрабатывает каждую запись SNP, используя файлы FASTA для референсного генома, и выводит результаты в файл 'FP_SNPs_10k_output.txt'. Логирование процесса происходит в файл 'snp_converter.log'.
+Скрипт считывает входной файл 'FP_SNPs_10k_GB38_twoAllelsFormat.tsv', обрабатывает каждую запись SNP, используя файлы FASTA для референсного генома, и выводит результаты в файл 'FP_SNPs_10k_output.txt'. Логирование процесса происходит в файл 'snp_converter.log', при отсутствии в исходном файле нуклеотида, соответствующего референсной последовательности в лог-файле фиксируется предупреждение и выводится сообщение "Neither allele matches reference" для обрабатываемой строки.
 ```sh
 docker run --rm \
   -v /your_path/FP_SNPs_10k_GB38_twoAllelsFormat:/app/data \
