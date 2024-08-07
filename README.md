@@ -64,7 +64,7 @@ cd SNP_converter
 Переместите необходимые файлы проекта в клонированный репозиторий:
 ```sh
 
-mv /yur_path/SNP_converter_docker/* .
+mv /your_path/SNP_converter_docker/* .
 ```
 Соберите Docker образ:
 ```sh
