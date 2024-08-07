@@ -70,14 +70,14 @@ docker build -t snp_converter .
 ```sh
 docker run -it \
   -v /your_path/FP_SNPs_10k_GB38_twoAllelsFormat:/app/data \
-  -v /mnt/data/ref/GRCh38.d1.vd1_mainChr/sepChrs:/app/ref/GRCh38.d1.vd1_mainChr/sepChrs \
+  -v /mnt/data/ref/GRCh38.d1.vd1_mainChr/sepChrs:/app/data/GRCh38.d1.vd1_mainChr/sepChrs \
   snp_converter
 ```
 ## Команда для запуска скрипта в Docker контейнере
 ```sh
 docker run --rm \
   -v /your_path/FP_SNPs_10k_GB38_twoAllelsFormat:/app/data \
-  -v /mnt/data/ref/GRCh38.d1.vd1_mainChr/sepChrs:/app/ref/GRCh38.d1.vd1_mainChr/sepChrs \
+  -v /mnt/data/ref/GRCh38.d1.vd1_mainChr/sepChrs:/app/data/GRCh38.d1.vd1_mainChr/sepChrs \
   snp_converter python snp_converter.py \
   -i /app/data/FP_SNPs_10k_GB38_twoAllelsFormat.tsv \
   -o /app/data/FP_SNPs_10k_output.txt \
@@ -89,7 +89,7 @@ docker run --rm \
 ```sh
 docker run --rm \
   -v /your_path/FP_SNPs_10k_GB38_twoAllelsFormat:/app/data \
-  -v /mnt/data/ref/GRCh38.d1.vd1_mainChr/sepChrs:/app/ref/GRCh38.d1.vd1_mainChr/sepChrs \
+  -v /mnt/data/ref/GRCh38.d1.vd1_mainChr/sepChrs:/app/data/GRCh38.d1.vd1_mainChr/sepChrs \
   snp_converter python snp_converter.py \
   -i /app/data/FP_SNPs_10k_GB38_twoAllelsFormat.tsv \
   -o /app/data/FP_SNPs_10k_output.txt \
