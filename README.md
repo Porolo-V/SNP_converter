@@ -6,6 +6,14 @@ https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/Software.cgi.
 Референсный геном человека версии GRCh38.d1.vd1
 (https://gdc.cancer.gov/about-data/data-harmonization-and-generation/gdc-reference-files). Был разбит на 25 файлов основных хромосом {chr1-22,M,Y,X}, хранятся на хост-машине в /mnt/data/ref/GRCh38.d1.vd1_mainChr/sepChrs/ и пробрасываются в папку /ref/GRCh38.d1.vd1_mainChr/sepChrs/ при запуске docker-контейнера.
 
+## Подготовка исходного файла 
+Для преобразования изначального файла FP_SNPs.txt в VCF-like формат, выполните следующую команду:
+```bash
+cd /path/to/FP_SNPs
+awk 'BEGIN { OFS="\t"; print "#CHROM", "POS", "ID", "allele1", "allele2" }
+    NR > 1 && $2 != 23 { print "chr"$2, $4, "rs"$1, $5, $6 }' FP_SNPs.txt > FP_SNPs_10k_GB38_twoAllelsFormat.tsv
+
+```
 # SNP Converter
 
 ## Описание скрипта
